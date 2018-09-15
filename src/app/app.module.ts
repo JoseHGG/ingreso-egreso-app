@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+// Enviroment
+import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +42,11 @@ import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
